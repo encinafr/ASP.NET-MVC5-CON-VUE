@@ -1,4 +1,6 @@
-﻿using Model.Auth;
+﻿using Common.CustomFilters;
+using Model.Auth;
+using Model.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Model.Domain
 {
-    public class UsersPerCourse
+    public class UsersPerCourse : AuditEntity, ISoftDeleted
     {
         public int Id { get; set; }
         public Course Course { get; set; }
@@ -21,5 +23,6 @@ namespace Model.Domain
         [ForeignKey("UserId")]
         public ApplicationUser User { get; set; }
         public string UserId { get; set; }
+        public bool Deleted { get; set; }
     }
 }

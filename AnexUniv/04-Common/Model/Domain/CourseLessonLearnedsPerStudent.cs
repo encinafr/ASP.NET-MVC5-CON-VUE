@@ -1,5 +1,7 @@
 ﻿using Common;
+using Common.CustomFilters;
 using Model.Auth;
+using Model.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Model.Domain
 {
-    public class CourseLessonLearnedsPerStudent
+    public class CourseLessonLearnedsPerStudent : AuditEntity, ISoftDeleted
     {
         public int Id { get; set; }
 
@@ -20,5 +22,6 @@ namespace Model.Domain
         public ApplicationUser User { get; set; }
 
         public string UserId { get; set; }
+        public bool Deleted { get; set; }
     }
 }
