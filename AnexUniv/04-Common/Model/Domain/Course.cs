@@ -1,6 +1,8 @@
 ﻿using Common;
+using Model.Auth;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,5 +30,12 @@ namespace Model.Domain
 
         public Category Category { get; set; }
         public int CategoryId { get; set; }
+
+        public ICollection<LessonPerCourse> Lessons { get; set; }
+
+        [ForeignKey("AuthorId")]
+        public ApplicationUser Author { get; set; }
+
+        public string AuthorId { get; set; }
     }
 }

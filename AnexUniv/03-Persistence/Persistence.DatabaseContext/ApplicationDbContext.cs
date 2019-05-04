@@ -17,7 +17,13 @@ namespace Persistence.DatabaseContext
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
         public DbSet<ApplicationRole> ApplicationRole { get; set; }
         public DbSet<ApplicationUserRole> ApplicationUserRole { get; set; }
-
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<CourseLessonLearnedsPerStudent> CourseLessonLearnedsPerStudents { get; set; }
+        public DbSet<Income> Incomes { get; set; }
+        public DbSet<LessonPerCourse> LessonPerCourses { get; set; }
+        public DbSet<ReviewsPerCourse> ReviewsPerCourses { get; set; }
+        public DbSet<UsersPerCourse> UsersPerCourses { get; set; }
         public ApplicationDbContext()
             : base(string.Format("name={0}", Parameters.AppContext))
         {
